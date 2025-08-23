@@ -66,13 +66,13 @@ export default function MiataHero({  onStartScroll, initialColor = "#d32f2f" }) 
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 ">
         <div className="flex flex-col items-center gap-2">
           <motion.div
             initial={{ opacity: 0, y: 0 }}
             animate={{ opacity: [0.2, 1, 0.2], y: [0, -8, 0] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-            className="h-6 w-6 rounded-full border border-white/30"
+            className="h-6 w-6 rounded-full border border-red-500"
           />
           <span className="text-xs uppercase tracking-widest">Desliza</span>
         </div>
