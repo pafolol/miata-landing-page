@@ -22,7 +22,7 @@ A full-featured 3D car configurator built with **React Three Fiber**, **Drei**, 
 
 ```bash
 git clone https://github.com/pafolol/miata-landing-page.git
-cd 3d-car-configurator
+cd miata-landing-page
 ```
 
 
