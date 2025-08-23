@@ -21,7 +21,7 @@ A full-featured 3D car configurator built with **React Three Fiber**, **Drei**, 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/pafolol/3d-car-configurator.git
+git clone https://github.com/pafolol/miata-landing-page.git
 cd 3d-car-configurator
 ```
 
