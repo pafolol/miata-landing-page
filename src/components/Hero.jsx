@@ -4,20 +4,7 @@ import { Environment, OrbitControls, ContactShadows, Html, useGLTF, Float, Perfo
 import { motion } from "framer-motion";
 import modelUrl  from "../assets/miata.glb"
 
-/**
- * MiataHero
- * ----------------------------------------------------------------
- * A full-screen 3D hero section featuring your Miata .glb model.
- * - Smooth entrance animation for headline/CTA (Framer Motion)
- * - Subtle turntable rotation for the car
- * - Responsive + Tailwind styled overlay
- * - Loader overlay while the GLB is being fetched
- *
- * Usage:
- * <MiataHero modelUrl="../assets/miata.glb" onStartScroll={() => {}}
- *           initialColor="#d32f2f" />
- *
- */
+
 export default function MiataHero({  onStartScroll, initialColor = "#d32f2f" }) {
   return (
     <section className="relative h-[100svh] w-full bg-neutral-950">
