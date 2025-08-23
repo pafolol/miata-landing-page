@@ -136,15 +136,20 @@ function FloorRim() {
 
 function Car({ modelUrl }) {
   const group = useRef();
-  const gltf = useGLTF(modelUrl, true);
+  
+
+  const { scene } = useGLTF(modelUrl);
+
+ 
+  const clonedScene = useMemo(() => scene.clone(), [scene]);
 
   useFrame((_, delta) => {
     if (group.current) group.current.rotation.y += delta * 0.15;
   });
 
   return (
-    <group ref={group} position={[0, 0, 0]}dispose={null}  scale={0.5} castShadow receiveShadow>
-      <primitive object={gltf.scene} />
+    <group ref={group} position={[0, 0, 0]} dispose={null} scale={0.5} castShadow receiveShadow>
+      <primitive object={clonedScene} />
     </group>
   );
 }

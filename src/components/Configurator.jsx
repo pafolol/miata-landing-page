@@ -83,33 +83,34 @@ function Loader() {
 
 function Car({ modelUrl, color, wheelType }) {
   const group = useRef();
-  const gltf = useGLTF(modelUrl);
+  const { scene } = useGLTF(modelUrl);
+  
 
- 
+  const clonedScene = useMemo(() => scene.clone(), [scene]);
+
   useFrame((_, delta) => {
     if (group.current) group.current.rotation.y += delta * 0.1;
   });
 
-  useMemo(() => {
-    if (!gltf.scene) return;
-    gltf.scene.traverse((child) => {
-      if (child.isMesh) {
 
-        if (child.name.toLowerCase().includes("body")) {
-          child.material = child.material.clone();
-          child.material.color.set(color);
-          child.material.metalness = 0.6;
-          child.material.roughness = 0.35;
-        }
+  useMemo(() => {
+    clonedScene.traverse((child) => {
+      if (child.isMesh && child.name.toLowerCase().includes("body")) {
+        child.material = child.material.clone(); 
+        child.material.color.set(color);
+        child.material.metalness = 0.6;
+        child.material.roughness = 0.35;
       }
     });
-  }, [gltf, color]);
+  }, [clonedScene, color]); 
 
   return (
     <group ref={group} dispose={null} position={[0, -0.6, 0]} castShadow receiveShadow>
-      <primitive object={gltf.scene} />
+
+      <primitive object={clonedScene} />
     </group>
   );
 }
+
 
 useGLTF.preload(modelUrl);
