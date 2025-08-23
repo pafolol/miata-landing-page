@@ -2,7 +2,7 @@ import React, { Suspense, useMemo, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, OrbitControls, ContactShadows, Html, useGLTF, Float, PerformanceMonitor } from "@react-three/drei";
 import { motion } from "framer-motion";
-import modelUrl from "../assets/miata.glb"
+import modelUrl  from "../assets/miata.glb"
 
 /**
  * MiataHero
@@ -18,7 +18,7 @@ import modelUrl from "../assets/miata.glb"
  *           initialColor="#d32f2f" />
  *
  */
-export default function MiataHero({ modelUrl=modelUrl, onStartScroll, initialColor = "#d32f2f" }) {
+export default function MiataHero({  onStartScroll, initialColor = "#d32f2f" }) {
   return (
     <section className="relative h-[100svh] w-full bg-neutral-950">
       {/* 3D Scene */}
