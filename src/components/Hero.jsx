@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import modelUrl  from "../assets/miata.glb"
 
 
-export default function MiataHero({  onStartScroll, initialColor = "#d32f2f" }) {
+export default function MiataHero() {
   return (
     <section className="relative h-[100svh] w-full bg-neutral-950">
       {/* 3D Scene */}
@@ -55,7 +55,7 @@ export default function MiataHero({  onStartScroll, initialColor = "#d32f2f" }) 
                 Ir al configurador
               </a>
               <button
-                onClick={() => onStartScroll && onStartScroll()}
+ 
                 className="pointer-events-auto inline-flex items-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10"
               >
                 Ver historia
